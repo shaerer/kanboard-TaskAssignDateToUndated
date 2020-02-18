@@ -46,3 +46,6 @@ You have the choice between 3 methods:
 3. Clone this repository into the folder `plugins/TaskAssignDateToUndated`
 
 Note: Plugin folder is case-sensitive.
+
+__________________________________________________________________________________________________________
+Wichtig: Code für unsere Nutzung angepasst.
