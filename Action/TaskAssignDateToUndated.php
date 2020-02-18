@@ -74,11 +74,15 @@ class TaskAssignDateToUndated extends Base
 
         foreach ($data['tasks'] as $task) {
             if ( ($task["date_due"] == "0") || ($task["date_due"] == "") || !isset($task["date_due"]) ) {
-                $values = array(
-                    'id'       => $task['id'],
-                    'date_due' => strtotime('now'),
-                );
-                $results[] = $this->taskModificationModel->update($values, false);
+                $column_name = $this->columnModel->getColumnTitleById($task['column_id']);
+                if ( $column_name != "Themenspeicher" ) {
+					$values = array(
+						'id'       => $task['id'],
+						'date_due' => strtotime('now'),
+					);
+//                  print_r($values);
+					$results[] = $this->taskModificationModel->update($values, false);
+				}
             }
         }
 
